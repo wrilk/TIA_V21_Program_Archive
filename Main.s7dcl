@@ -1,0 +1,37 @@
+﻿{
+    S7_Optimized := "TRUE";
+    S7_PreferredLanguage := "LAD";
+    S7_Version := "0.1"
+}
+ORGANIZATION_BLOCK "Main"
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+            Contact( "Clock_1Hz" )
+            Contact( "Tag_2" )
+            Coil( "Tag_1" )
+            Coil( "Tag_4" )
+        END_RUNG
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+            P_Contact(
+                operand := "Clock_10Hz",
+                bit := "tt"
+            )
+            Contact( "Tag_2" )
+            
+            Add(
+                in1 := 1,
+                in2 := "Tag_3",
+                out => "Tag_3"
+            )
+        END_RUNG
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+        END_RUNG
+    END_NETWORK
+END_ORGANIZATION_BLOCK
