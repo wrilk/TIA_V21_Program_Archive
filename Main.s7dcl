@@ -48,6 +48,50 @@ ORGANIZATION_BLOCK "Main"
     { S7_Language := "LAD" }
     NETWORK
         RUNG wire#powerrail
+            Contact( "Clock_1Hz" )
+            {
+                S7_Templates := "SrcType := Word"
+            }
+            Rol(
+                in := "Tag_5",
+                n := 1,
+                out => "Tag_5"
+            )
+        END_RUNG
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+            Contact( "START" )
+            wire#w1
+            I_Contact( "数据块_1".Timer2.Q )
+            Coil( "OUT" )
+        END_RUNG
+        RUNG wire#powerrail
+            Contact( "TRIG_P1_O" )
+        END_RUNG wire#w1
+        RUNG wire#powerrail
+            Contact( "OUT" )
+        END_RUNG wire#w1
+        RUNG wire#w1
+            "数据块_1".Timer2.TON(
+                pt := T#5s,
+                et =>  
+            )
+        END_RUNG
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+            I_Contact( "OUT" )
+            Contact( "Clock_1Hz" )
+            P_Trig( "TRIG_P1" )
+            Coil( "TRIG_P1_O" )
+        END_RUNG
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
         END_RUNG
     END_NETWORK
 END_ORGANIZATION_BLOCK
