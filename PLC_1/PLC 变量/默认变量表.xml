@@ -462,6 +462,25 @@
           </MultilingualText>
         </ObjectList>
       </SW.Tags.PlcTag>
+      <SW.Tags.PlcTag ID="49" CompositionName="Tags">
+        <AttributeList>
+          <DataTypeName>Bool</DataTypeName>
+          <LogicalAddress>%Q0.3</LogicalAddress>
+          <Name>Tag_6</Name>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="4B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Tags.PlcTag>
     </ObjectList>
   </SW.Tags.PlcTagTable>
 </Document>
