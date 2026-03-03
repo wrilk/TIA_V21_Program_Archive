@@ -92,10 +92,16 @@ ORGANIZATION_BLOCK "Main"
     { S7_Language := "LAD" }
     NETWORK
         RUNG wire#powerrail
+            Contact( "TRIG_P1_O" )
             "块_1_DB"(
                 in1 := "Clock_1Hz",
                 in2 := "TRIG_P1_O",
                 out1 => "Tag_6"
+            )
+            "块_1_DB_1"(
+                in1 :=  ,
+                in2 :=  ,
+                out1 =>  
             )
         END_RUNG
     END_NETWORK
