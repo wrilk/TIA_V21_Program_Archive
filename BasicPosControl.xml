@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V21" />
+  <SW.TechnologicalObjects.TechnologicalInstanceDB ID="0">
+    <AttributeList>
+      <InstanceOfName>BasicPosControl_1</InstanceOfName>
+      <Interface>
+        <Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+          <Section Name="Input">
+            <Member Name="ModePos" Datatype="Int" />
+            <Member Name="EnableAxis" Datatype="Bool" />
+            <Member Name="CancelTraversing" Datatype="Bool" />
+            <Member Name="IntermediateStop" Datatype="Bool" />
+            <Member Name="Positive" Datatype="Bool" />
+            <Member Name="Negative" Datatype="Bool" />
+            <Member Name="Jog1" Datatype="Bool" />
+            <Member Name="Jog2" Datatype="Bool" />
+            <Member Name="FlyRef" Datatype="Bool" />
+            <Member Name="AckError" Datatype="Bool" />
+            <Member Name="ExecuteMode" Datatype="Bool" />
+            <Member Name="Position" Datatype="LReal" />
+            <Member Name="Velocity" Datatype="LReal" />
+            <Member Name="OverV" Datatype="Int" />
+            <Member Name="OverAcc" Datatype="Int" />
+            <Member Name="OverDec" Datatype="Int" />
+            <Member Name="HomePosition" Datatype="LReal" />
+            <Member Name="ConfigEPos" Datatype="DWord" />
+            <Member Name="UserSetPZD" Datatype="Word" />
+          </Section>
+          <Section Name="Output">
+            <Member Name="AxisEnabled" Datatype="Bool" />
+            <Member Name="AxisPosOk" Datatype="Bool" />
+            <Member Name="AxisSpFixed" Datatype="Bool" />
+            <Member Name="AxisRef" Datatype="Bool" />
+            <Member Name="AxisWarn" Datatype="Bool" />
+            <Member Name="AxisError" Datatype="Bool" />
+            <Member Name="Lockout" Datatype="Bool" />
+            <Member Name="ActVelocity" Datatype="LReal" />
+            <Member Name="ActPosition" Datatype="LReal" />
+            <Member Name="ActMode" Datatype="Int" />
+            <Member Name="EPosZSW1" Datatype="Word" />
+            <Member Name="EPosZSW2" Datatype="Word" />
+            <Member Name="ActWarn" Datatype="Word" />
+            <Member Name="ActFault" Datatype="Word" />
+            <Member Name="Error" Datatype="Bool" />
+            <Member Name="Status" Datatype="Word" />
+            <Member Name="DiagID" Datatype="Word" />
+            <Member Name="UserReceivePZD" Datatype="Word" />
+          </Section>
+          <Section Name="InOut" />
+          <Section Name="Static">
+            <Member Name="sbOff1Edge" Datatype="Bool" />
+            <Member Name="sbOff1" Datatype="Bool" />
+            <Member Name="sbExecuteEdge" Datatype="Bool" />
+            <Member Name="sbExecute" Datatype="Bool" />
+            <Member Name="sbRefTypEdge" Datatype="Bool" />
+            <Member Name="sbRefTyp" Datatype="Bool" />
+            <Member Name="sbMdiStart" Datatype="Bool" />
+            <Member Name="sbMdiStartEdge" Datatype="Bool" />
+            <Member Name="sbRefStart" Datatype="Bool" />
+            <Member Name="sbJogInc" Datatype="Bool" />
+            <Member Name="sbReady" Datatype="Bool" />
+            <Member Name="sbIOp" Datatype="Bool" />
+            <Member Name="sbAccel" Datatype="Bool" />
+            <Member Name="sbDecel" Datatype="Bool" />
+            <Member Name="sbAlarm" Datatype="Bool" />
+            <Member Name="sbFault" Datatype="Bool" />
+            <Member Name="sbFWD" Datatype="Bool" />
+            <Member Name="sbBWD" Datatype="Bool" />
+            <Member Name="sbBusy" Datatype="Bool" />
+            <Member Name="swStatus" Datatype="Word" />
+            <Member Name="swEPosZSW1" Datatype="Word" />
+            <Member Name="swEPosZSW2" Datatype="Word" />
+            <Member Name="siExecuteCyc" Datatype="Int" />
+            <Member Name="siRefTypCyc" Datatype="Int" />
+            <Member Name="siJogIncCyc" Datatype="Int" />
+            <Member Name="siMdiStartCyc" Datatype="Int" />
+            <Member Name="siRefActRetry" Datatype="Int" />
+            <Member Name="siModePos" Datatype="Int" />
+            <Member Name="siModePosMax" Datatype="Int" />
+            <Member Name="siModePosMax_3rdGen" Datatype="Int" />
+            <Member Name="siCycWait" Datatype="Int" />
+            <Member Name="siRetryMax" Datatype="Int" />
+            <Member Name="sbModePos" Datatype="Bool" />
+            <Member Name="STW1" Datatype="Word" />
+            <Member Name="EPosSTW1" Datatype="Word" />
+            <Member Name="EPosSTW2" Datatype="Word" />
+            <Member Name="STW2" Datatype="Word" />
+            <Member Name="OverrideV" Datatype="Word" />
+            <Member Name="PositionSP" Datatype="DWord" />
+            <Member Name="VelocitySP" Datatype="DWord" />
+            <Member Name="OverrideA" Datatype="Word" />
+            <Member Name="OverrideA_DW" Datatype="DWord" />
+            <Member Name="OverrideD" Datatype="Word" />
+            <Member Name="OverrideD_DW" Datatype="DWord" />
+            <Member Name="SendPZD12" Datatype="Word" />
+            <Member Name="ZSW1" Datatype="Word" />
+            <Member Name="EPosZSW3" Datatype="Word" />
+            <Member Name="EPosZSW4" Datatype="Word" />
+            <Member Name="ZSW2" Datatype="Word" />
+            <Member Name="NotUsed" Datatype="Word" />
+            <Member Name="RES" Datatype="DWord" />
+            <Member Name="REF_COORDINATE_DW" Datatype="DWord" />
+            <Member Name="PositionAV" Datatype="DWord" />
+            <Member Name="VelocityAV" Datatype="DWord" />
+            <Member Name="ErrNr" Datatype="Word" />
+            <Member Name="WarnNr" Datatype="Word" />
+            <Member Name="ReceivePZD12" Datatype="Word" />
+            <Member Name="HWIDSTW" Datatype="HW_IO">
+              <StartValue>280</StartValue>
+            </Member>
+            <Member Name="HWIDZSW" Datatype="HW_IO">
+              <StartValue>280</StartValue>
+            </Member>
+            <Member Name="srResolutionFactor" Datatype="LReal" />
+            <Member Name="srVelocityFactor" Datatype="LReal" />
+            <Member Name="srNIST_BFactor" Datatype="LReal">
+              <StartValue>2.79396772384644E-05</StartValue>
+            </Member>
+            <Member Name="sDriveTelNo" Datatype="Int" />
+          </Section>
+        </Sections>
+      </Interface>
+      <Name>BasicPosControl</Name>
+      <Namespace />
+      <Number>7</Number>
+      <OfSystemLibElement>BasicPosControl</OfSystemLibElement>
+      <OfSystemLibVersion>3.1</OfSystemLibVersion>
+      <ParameterData />
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="3" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.TechnologicalObjects.TechnologicalInstanceDB>
+</Document>

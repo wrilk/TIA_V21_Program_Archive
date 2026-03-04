@@ -12,6 +12,21 @@
                 <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
               </AttributeList>
             </Member>
+            <Member Name="当前扭矩浮点数" Datatype="Real">
+              <AttributeList>
+                <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+              </AttributeList>
+            </Member>
+            <Member Name="正向扭矩设定" Datatype="Real">
+              <AttributeList>
+                <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+              </AttributeList>
+            </Member>
+            <Member Name="负向扭矩设定" Datatype="Real">
+              <AttributeList>
+                <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+              </AttributeList>
+            </Member>
           </Section>
         </Sections>
       </Interface>
