@@ -1,32 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Document>
   <Engineering version="V21" />
-  <SW.Blocks.GlobalDB ID="0">
+  <SW.Blocks.InstanceDB ID="0">
     <AttributeList>
-      <AutoNumber>false</AutoNumber>
+      <InstanceOfName>块_1</InstanceOfName>
+      <InstanceOfType>FB</InstanceOfType>
       <Interface>
         <Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
-          <Section Name="Static">
-            <Member Name="cntDb" Datatype="DInt" />
-            <Member Name="Enable" Datatype="Bool" />
-            <Member Name="AckError" Datatype="Bool" />
-            <Member Name="Jog1" Datatype="Bool" />
-            <Member Name="Jog2" Datatype="Bool" />
-            <Member Name="ExcuteTrig" Datatype="Bool" />
-            <Member Name="JogMode" Datatype="Bool" />
-            <Member Name="PosMode" Datatype="Bool" />
-            <Member Name="HomeMode" Datatype="Bool" />
-            <Member Name="ModeCtrol" Datatype="Int" />
-            <Member Name="PosSped" Datatype="LReal" />
-            <Member Name="PosTargetPos" Datatype="LReal" />
+          <Section Name="Input">
+            <Member Name="in1" Datatype="Bool" />
+            <Member Name="in2" Datatype="Bool" />
           </Section>
+          <Section Name="Output">
+            <Member Name="out1" Datatype="Bool" />
+          </Section>
+          <Section Name="InOut" />
+          <Section Name="Static" />
         </Sections>
       </Interface>
-      <MemoryLayout>Optimized</MemoryLayout>
-      <MemoryReserve>100</MemoryReserve>
-      <Name>数据块_2</Name>
+      <Name>块_1_DB_3</Name>
       <Namespace />
-      <Number>3</Number>
+      <Number>6</Number>
       <ProgrammingLanguage>DB</ProgrammingLanguage>
     </AttributeList>
     <ObjectList>
@@ -51,5 +45,5 @@
         </ObjectList>
       </MultilingualText>
     </ObjectList>
-  </SW.Blocks.GlobalDB>
+  </SW.Blocks.InstanceDB>
 </Document>

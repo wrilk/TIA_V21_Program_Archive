@@ -32,36 +32,6 @@ ORGANIZATION_BLOCK "Main"
     { S7_Language := "LAD" }
     NETWORK
         RUNG wire#powerrail
-            Contact( "Clock_1Hz" )
-            "数据块_1".Timer1.TON(
-                pt := T#0.9s,
-                et =>  
-            )
-            
-            Add(
-                in1 := 1,
-                in2 := "数据块_2".cntDb,
-                out => "数据块_2".cntDb
-            )
-        END_RUNG
-    END_NETWORK
-    { S7_Language := "LAD" }
-    NETWORK
-        RUNG wire#powerrail
-            Contact( "Clock_1Hz" )
-            {
-                S7_Templates := "SrcType := Word"
-            }
-            Rol(
-                in := "Tag_5",
-                n := 1,
-                out => "Tag_5"
-            )
-        END_RUNG
-    END_NETWORK
-    { S7_Language := "LAD" }
-    NETWORK
-        RUNG wire#powerrail
             Contact( "START" )
             wire#w1
             I_Contact( "数据块_1".Timer2.Q )
@@ -77,6 +47,30 @@ ORGANIZATION_BLOCK "Main"
             "数据块_1".Timer2.TON(
                 pt := T#5s,
                 et =>  
+            )
+        END_RUNG
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+            Contact( "Clock_1Hz" )
+            "数据块_1".Timer1.TON(
+                pt := T#0.9s,
+                et =>  
+            )
+            {
+                S7_Templates := "SrcType := Word"
+            }
+            Rol(
+                in := "Tag_5",
+                n := 1,
+                out => "Tag_5"
+            )
+            
+            Add(
+                in1 := 1,
+                in2 := "数据块_2".cntDb,
+                out => "数据块_2".cntDb
             )
         END_RUNG
     END_NETWORK
@@ -103,6 +97,162 @@ ORGANIZATION_BLOCK "Main"
                 in2 :=  ,
                 out1 =>  
             )
+        END_RUNG
+    END_NETWORK
+    {
+        S7_Language := "LAD";
+        S7_NetworkTitle := "MLC_y5"
+    }
+    NETWORK
+        RUNG wire#powerrail
+            Contact( "数据块_2".JogMode )
+            
+            Move(
+                in := 7,
+                out1 => "数据块_2".ModeCtrol
+            )
+        END_RUNG
+        RUNG wire#powerrail
+            Contact( "数据块_2".PosMode )
+            
+            Move(
+                in := 2,
+                out1 => "数据块_2".ModeCtrol
+            )
+        END_RUNG
+        RUNG wire#powerrail
+            Contact( "数据块_2".HomeMode )
+            
+            Move(
+                in := 4,
+                out1 => "数据块_2".ModeCtrol
+            )
+            Coil( "BasicPosControl".Negative )
+        END_RUNG
+        RUNG wire#powerrail
+            Coil( "BasicPosControl".ConfigEPos.%X0 )
+            Coil( "BasicPosControl".ConfigEPos.%X1 )
+            Coil( "BasicPosControl".ConfigEPos.%X3 )
+        END_RUNG
+        RUNG wire#powerrail
+            Contact( "BasicPosControl".UserReceivePZD.%X1 )
+            Coil( "BasicPosControl".ConfigEPos.%X6 )
+        END_RUNG
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+            P_Contact(
+                operand := "数据块_2".JogMode,
+                bit := "JogModePuse"
+            )
+            wire#w1
+            R_Coil( "数据块_2".PosMode )
+        END_RUNG
+        RUNG wire#w1
+            R_Coil( "数据块_2".HomeMode )
+        END_RUNG
+        RUNG wire#powerrail
+            P_Contact(
+                operand := "数据块_2".PosMode,
+                bit := "PosModePuse"
+            )
+            wire#w2
+            R_Coil( "数据块_2".JogMode )
+        END_RUNG
+        RUNG wire#w2
+            R_Coil( "数据块_2".HomeMode )
+        END_RUNG
+        RUNG wire#powerrail
+            P_Contact(
+                operand := "数据块_2".HomeMode,
+                bit := "HomeModePuse"
+            )
+            wire#w3
+            R_Coil( "数据块_2".JogMode )
+        END_RUNG
+        RUNG wire#w3
+            R_Coil( "数据块_2".PosMode )
+        END_RUNG
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+            "BasicPosControl".BasicPosControl(
+                ModePos := "数据块_2".ModeCtrol,
+                EnableAxis := "数据块_2".Enable,
+                CancelTraversing :=  ,
+                IntermediateStop :=  ,
+                Positive :=  ,
+                Negative :=  ,
+                Jog1 := "数据块_2".Jog1,
+                Jog2 := "数据块_2".Jog2,
+                FlyRef :=  ,
+                AckError := "数据块_2".AckError,
+                ExecuteMode := "数据块_2".ExcuteTrig,
+                Position := "数据块_2".PosTargetPos,
+                Velocity := "数据块_2".PosSped,
+                OverV :=  ,
+                OverAcc :=  ,
+                OverDec :=  ,
+                HomePosition :=  ,
+                ConfigEPos :=  ,
+                UserSetPZD :=  ,
+                AxisEnabled =>  ,
+                AxisPosOk =>  ,
+                AxisSpFixed =>  ,
+                AxisRef =>  ,
+                AxisWarn =>  ,
+                AxisError =>  ,
+                Lockout =>  ,
+                ActVelocity =>  ,
+                ActPosition =>  ,
+                ActMode =>  ,
+                EPosZSW1 => "Tag_7",
+                EPosZSW2 => "Tag_8",
+                ActWarn =>  ,
+                ActFault =>  ,
+                Error =>  ,
+                Status =>  ,
+                DiagId =>  ,
+                UserReceivePZD =>  
+            )
+        END_RUNG
+        RUNG wire#powerrail
+            Contact( "BasicPosControl".Error )
+            R_Coil( "数据块_2".Enable )
+            R_Coil( "数据块_2".Jog1 )
+            R_Coil( "数据块_2".Jog2 )
+            R_Coil( "数据块_2".Enable )
+        END_RUNG
+        RUNG wire#powerrail
+            Contact( "BasicPosControl".EPosZSW2.%X15 )
+            wire#w1
+            { S7_Templates := "SrcType := Int" }
+            NE_Contact(
+                in1 := "BasicPosControl".ModePos,
+                in2 := 4
+            )
+            R_Coil( "数据块_2".ExcuteTrig )
+        END_RUNG
+        RUNG wire#w1
+            { S7_Templates := "SrcType := Int" }
+            EQ_Contact(
+                in1 := "BasicPosControl".ModePos,
+                in2 := 4
+            )
+            Contact( "BasicPosControl".AxisRef )
+            R_Coil( "数据块_2".ExcuteTrig )
+        END_RUNG
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+            Contact( "数据块_2".AckError )
+            Contact( "Clock_1Hz" )
+            I_Contact( "BasicPosControl".Error )
+            R_Coil( "数据块_2".AckError )
+            R_Coil( "数据块_2".ExcuteTrig )
         END_RUNG
     END_NETWORK
     { S7_Language := "LAD" }
