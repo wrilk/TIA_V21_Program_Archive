@@ -15,7 +15,6 @@ ORGANIZATION_BLOCK "Main"
         END_RUNG
         RUNG wire#powerrail
             Contact( "BasicPosControl".EPosZSW2.%X15 )
-            wire#w1
             { S7_Templates := "SrcType := Int" }
             NE_Contact(
                 in1 := "BasicPosControl".ModePos,
@@ -23,13 +22,16 @@ ORGANIZATION_BLOCK "Main"
             )
             R_Coil( "数据块_2".ExcuteTrig )
         END_RUNG
-        RUNG wire#w1
+        RUNG wire#powerrail
             { S7_Templates := "SrcType := Int" }
             EQ_Contact(
                 in1 := "BasicPosControl".ModePos,
                 in2 := 4
             )
-            Contact( "BasicPosControl".AxisRef )
+            P_Contact(
+                operand := "BasicPosControl".AxisRef,
+                bit := "TRIG_P2"
+            )
             R_Coil( "数据块_2".ExcuteTrig )
         END_RUNG
         RUNG wire#powerrail
@@ -42,7 +44,7 @@ ORGANIZATION_BLOCK "Main"
     END_NETWORK
     {
         S7_Language := "LAD";
-        S7_NetworkTitle := "MLC_y5"
+        S7_NetworkTitle := "MLC_e5"
     }
     NETWORK
         RUNG wire#powerrail
