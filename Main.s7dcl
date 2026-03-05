@@ -4,6 +4,10 @@
     S7_Version := "0.1"
 }
 ORGANIZATION_BLOCK "Main"
+    VAR_TEMP
+        result : Int;
+    END_VAR
+
     { S7_Language := "LAD" }
     NETWORK
         RUNG wire#powerrail
@@ -171,5 +175,40 @@ ORGANIZATION_BLOCK "Main"
         "报文750附加扭矩给定" := 16384 * 0.2;
         "报文750上限扭矩限定" := 16384 * 0.5;
         "报文750下限扭矩限定" := -16384 * 0.5;
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+            WWW(
+                CTRL_DB := 333,
+                RET_VAL => #result
+            )
+        END_RUNG
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+            Contact( "DB1".RunBtn )
+            wire#w1
+            Coil( "DB1".RunStatus )
+        END_RUNG
+        RUNG wire#powerrail
+            Contact( "DB1".RunStatus )
+        END_RUNG wire#w1
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+            
+            Move(
+                in := "DB1".SetTime,
+                out1 => "DB1".CurrentTime
+            )
+        END_RUNG
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+        END_RUNG
     END_NETWORK
 END_ORGANIZATION_BLOCK

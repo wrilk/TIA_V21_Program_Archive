@@ -1,5 +1,3 @@
 ﻿MultiLingualTexts:
   - id: MLC_e5
-    zh-CN: 1 = Direction negative
   - id: MLC_55s
-    zh-CN: 伺服驱动器P2003（伺服参考扭矩）参数=0.504牛米/16384=H4000
