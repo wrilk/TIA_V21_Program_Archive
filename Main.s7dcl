@@ -6,6 +6,8 @@
 ORGANIZATION_BLOCK "Main"
     VAR_TEMP
         result : Int;
+        svtime : Time;
+        tt : DInt;
     END_VAR
 
     { S7_Language := "LAD" }
@@ -190,6 +192,7 @@ ORGANIZATION_BLOCK "Main"
         RUNG wire#powerrail
             Contact( "DB1".RunBtn )
             wire#w1
+            I_Contact( "DB1".StopBtn )
             Coil( "DB1".RunStatus )
         END_RUNG
         RUNG wire#powerrail
@@ -200,10 +203,29 @@ ORGANIZATION_BLOCK "Main"
     NETWORK
         RUNG wire#powerrail
             
-            Move(
-                in := "DB1".SetTime,
-                out1 => "DB1".CurrentTime
+            Mul(
+                in1 := "DB1".SetTime,
+                in2 := 1000,
+                out => #tt
             )
+            {
+                S7_Templates := "[src_type := DInt, dest_type := Time]"
+            }
+            T_CONV(
+                in := #tt,
+                out => #svtime
+            )
+        END_RUNG
+    END_NETWORK
+    { S7_Language := "LAD" }
+    NETWORK
+        RUNG wire#powerrail
+            Contact( "DB1".RunStatus )
+            "数据块_1".Timer1.TON(
+                pt := #svtime,
+                et =>  
+            )
+            R_Coil( "DB1".RunStatus )
         END_RUNG
     END_NETWORK
     { S7_Language := "LAD" }

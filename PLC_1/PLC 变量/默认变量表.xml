@@ -8,9 +8,9 @@
     <ObjectList>
       <SW.Tags.PlcTag ID="1" CompositionName="Tags">
         <AttributeList>
-          <DataTypeName>Byte</DataTypeName>
-          <LogicalAddress>%MB8190</LogicalAddress>
-          <Name>System_Byte</Name>
+          <DataTypeName>Int</DataTypeName>
+          <LogicalAddress>%IW92</LogicalAddress>
+          <Name>报文750当前扭矩</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="2" CompositionName="Comment">
@@ -27,9 +27,9 @@
       </SW.Tags.PlcTag>
       <SW.Tags.PlcTag ID="4" CompositionName="Tags">
         <AttributeList>
-          <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M8190.0</LogicalAddress>
-          <Name>FirstScan</Name>
+          <DataTypeName>Int</DataTypeName>
+          <LogicalAddress>%QW88</LogicalAddress>
+          <Name>报文750附加扭矩给定</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="5" CompositionName="Comment">
@@ -46,9 +46,9 @@
       </SW.Tags.PlcTag>
       <SW.Tags.PlcTag ID="7" CompositionName="Tags">
         <AttributeList>
-          <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M8190.1</LogicalAddress>
-          <Name>DiagStatusUpdate</Name>
+          <DataTypeName>Int</DataTypeName>
+          <LogicalAddress>%QW90</LogicalAddress>
+          <Name>报文750上限扭矩限定</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="8" CompositionName="Comment">
@@ -65,9 +65,9 @@
       </SW.Tags.PlcTag>
       <SW.Tags.PlcTag ID="A" CompositionName="Tags">
         <AttributeList>
-          <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M8190.2</LogicalAddress>
-          <Name>AlwaysTRUE</Name>
+          <DataTypeName>Int</DataTypeName>
+          <LogicalAddress>%QW92</LogicalAddress>
+          <Name>报文750下限扭矩限定</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="B" CompositionName="Comment">
@@ -84,9 +84,9 @@
       </SW.Tags.PlcTag>
       <SW.Tags.PlcTag ID="D" CompositionName="Tags">
         <AttributeList>
-          <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M8190.3</LogicalAddress>
-          <Name>AlwaysFALSE</Name>
+          <DataTypeName>Byte</DataTypeName>
+          <LogicalAddress>%MB8190</LogicalAddress>
+          <Name>System_Byte</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="E" CompositionName="Comment">
@@ -103,9 +103,9 @@
       </SW.Tags.PlcTag>
       <SW.Tags.PlcTag ID="10" CompositionName="Tags">
         <AttributeList>
-          <DataTypeName>Byte</DataTypeName>
-          <LogicalAddress>%MB8191</LogicalAddress>
-          <Name>Clock_Byte</Name>
+          <DataTypeName>Bool</DataTypeName>
+          <LogicalAddress>%M8190.0</LogicalAddress>
+          <Name>FirstScan</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="11" CompositionName="Comment">
@@ -123,8 +123,8 @@
       <SW.Tags.PlcTag ID="13" CompositionName="Tags">
         <AttributeList>
           <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M8191.0</LogicalAddress>
-          <Name>Clock_10Hz</Name>
+          <LogicalAddress>%M8190.1</LogicalAddress>
+          <Name>DiagStatusUpdate</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="14" CompositionName="Comment">
@@ -142,8 +142,8 @@
       <SW.Tags.PlcTag ID="16" CompositionName="Tags">
         <AttributeList>
           <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M8191.1</LogicalAddress>
-          <Name>Clock_5Hz</Name>
+          <LogicalAddress>%M8190.2</LogicalAddress>
+          <Name>AlwaysTRUE</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="17" CompositionName="Comment">
@@ -161,8 +161,8 @@
       <SW.Tags.PlcTag ID="19" CompositionName="Tags">
         <AttributeList>
           <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M8191.2</LogicalAddress>
-          <Name>Clock_2.5Hz</Name>
+          <LogicalAddress>%M8190.3</LogicalAddress>
+          <Name>AlwaysFALSE</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="1A" CompositionName="Comment">
@@ -179,9 +179,9 @@
       </SW.Tags.PlcTag>
       <SW.Tags.PlcTag ID="1C" CompositionName="Tags">
         <AttributeList>
-          <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M8191.3</LogicalAddress>
-          <Name>Clock_2Hz</Name>
+          <DataTypeName>Byte</DataTypeName>
+          <LogicalAddress>%MB8191</LogicalAddress>
+          <Name>Clock_Byte</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="1D" CompositionName="Comment">
@@ -199,8 +199,8 @@
       <SW.Tags.PlcTag ID="1F" CompositionName="Tags">
         <AttributeList>
           <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M8191.4</LogicalAddress>
-          <Name>Clock_1.25Hz</Name>
+          <LogicalAddress>%M8191.0</LogicalAddress>
+          <Name>Clock_10Hz</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="20" CompositionName="Comment">
@@ -218,8 +218,8 @@
       <SW.Tags.PlcTag ID="22" CompositionName="Tags">
         <AttributeList>
           <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M8191.5</LogicalAddress>
-          <Name>Clock_1Hz</Name>
+          <LogicalAddress>%M8191.1</LogicalAddress>
+          <Name>Clock_5Hz</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="23" CompositionName="Comment">
@@ -237,8 +237,8 @@
       <SW.Tags.PlcTag ID="25" CompositionName="Tags">
         <AttributeList>
           <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M8191.6</LogicalAddress>
-          <Name>Clock_0.625Hz</Name>
+          <LogicalAddress>%M8191.2</LogicalAddress>
+          <Name>Clock_2.5Hz</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="26" CompositionName="Comment">
@@ -256,8 +256,8 @@
       <SW.Tags.PlcTag ID="28" CompositionName="Tags">
         <AttributeList>
           <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M8191.7</LogicalAddress>
-          <Name>Clock_0.5Hz</Name>
+          <LogicalAddress>%M8191.3</LogicalAddress>
+          <Name>Clock_2Hz</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="29" CompositionName="Comment">
@@ -275,8 +275,8 @@
       <SW.Tags.PlcTag ID="2B" CompositionName="Tags">
         <AttributeList>
           <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M0.4</LogicalAddress>
-          <Name>TRIG_P1</Name>
+          <LogicalAddress>%M8191.4</LogicalAddress>
+          <Name>Clock_1.25Hz</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="2C" CompositionName="Comment">
@@ -294,8 +294,8 @@
       <SW.Tags.PlcTag ID="2E" CompositionName="Tags">
         <AttributeList>
           <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M0.6</LogicalAddress>
-          <Name>JogModePuse</Name>
+          <LogicalAddress>%M8191.5</LogicalAddress>
+          <Name>Clock_1Hz</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="2F" CompositionName="Comment">
@@ -313,8 +313,8 @@
       <SW.Tags.PlcTag ID="31" CompositionName="Tags">
         <AttributeList>
           <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M0.7</LogicalAddress>
-          <Name>PosModePuse</Name>
+          <LogicalAddress>%M8191.6</LogicalAddress>
+          <Name>Clock_0.625Hz</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="32" CompositionName="Comment">
@@ -332,8 +332,8 @@
       <SW.Tags.PlcTag ID="34" CompositionName="Tags">
         <AttributeList>
           <DataTypeName>Bool</DataTypeName>
-          <LogicalAddress>%M1.0</LogicalAddress>
-          <Name>HomeModePuse</Name>
+          <LogicalAddress>%M8191.7</LogicalAddress>
+          <Name>Clock_0.5Hz</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="35" CompositionName="Comment">
@@ -350,9 +350,9 @@
       </SW.Tags.PlcTag>
       <SW.Tags.PlcTag ID="37" CompositionName="Tags">
         <AttributeList>
-          <DataTypeName>Int</DataTypeName>
-          <LogicalAddress>%IW92</LogicalAddress>
-          <Name>报文750当前扭矩</Name>
+          <DataTypeName>Bool</DataTypeName>
+          <LogicalAddress>%M0.4</LogicalAddress>
+          <Name>TRIG_P1</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="38" CompositionName="Comment">
@@ -369,9 +369,9 @@
       </SW.Tags.PlcTag>
       <SW.Tags.PlcTag ID="3A" CompositionName="Tags">
         <AttributeList>
-          <DataTypeName>Int</DataTypeName>
-          <LogicalAddress>%QW88</LogicalAddress>
-          <Name>报文750附加扭矩给定</Name>
+          <DataTypeName>Bool</DataTypeName>
+          <LogicalAddress>%M0.6</LogicalAddress>
+          <Name>JogModePuse</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="3B" CompositionName="Comment">
@@ -388,9 +388,9 @@
       </SW.Tags.PlcTag>
       <SW.Tags.PlcTag ID="3D" CompositionName="Tags">
         <AttributeList>
-          <DataTypeName>Int</DataTypeName>
-          <LogicalAddress>%QW90</LogicalAddress>
-          <Name>报文750上限扭矩限定</Name>
+          <DataTypeName>Bool</DataTypeName>
+          <LogicalAddress>%M0.7</LogicalAddress>
+          <Name>PosModePuse</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="3E" CompositionName="Comment">
@@ -407,9 +407,9 @@
       </SW.Tags.PlcTag>
       <SW.Tags.PlcTag ID="40" CompositionName="Tags">
         <AttributeList>
-          <DataTypeName>Int</DataTypeName>
-          <LogicalAddress>%QW92</LogicalAddress>
-          <Name>报文750下限扭矩限定</Name>
+          <DataTypeName>Bool</DataTypeName>
+          <LogicalAddress>%M1.0</LogicalAddress>
+          <Name>HomeModePuse</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="41" CompositionName="Comment">
